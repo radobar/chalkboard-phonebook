@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+node_modules/
+build/
+dist/
+tmp/
+temp/
+database
+.DS_Store
+coverage
+config/local.js
+.directory
+package-lock.json

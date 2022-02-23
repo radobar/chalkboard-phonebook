@@ -1,0 +1,20 @@
+{
+  "jwt": {
+    "jwt_secret": "JWT_SECRET"
+  },
+  "app": {
+    "port": "PORT"
+  },
+  "typeorm": {
+    "type": "DB_TYPE",
+    "host": "DB_HOST",
+    "port": "DB_PORT",
+    "username": "DB_USERNAME",
+    "password": "DB_PASSWORD",
+    "database": "DB_DATABASE",
+    "logging": "DB_LOGGING"
+  },
+  "swagger": {
+    "base_path": "SWAGGER_BASE_PATH"
+  }
+}
