@@ -7,11 +7,12 @@ export class ContactRecord {
   @PrimaryGeneratedColumn()
   public readonly id: number;
 
+  // make nullable
   @OneToMany(
     () => PhoneNumber,
     contactType => contactType.userContact,
   )
-  public phoneNumbers: PhoneNumber[];
+  public phoneNumbers?: PhoneNumber[];
 
   @Column()
   public name: string;
