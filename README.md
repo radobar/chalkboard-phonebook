@@ -1,7 +1,6 @@
 # Boilerplate source
 Cloned the following repo to get a base for the project:
 https://github.com/dyshaev-working/nodejs-nestjs-typescript-sqlite-passport-crud-example.git
-Always create a README file that includes:
 
 # Reasoning
 Wanted a solid base for an API that can easily run in a container
