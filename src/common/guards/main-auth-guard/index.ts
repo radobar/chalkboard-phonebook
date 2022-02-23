@@ -7,7 +7,7 @@ import { UserToolsService } from '../../../modules/_common/tools/services/userTo
 const GUARD_KEY: string = 'user_access_control';
 
 @Injectable()
-export class UserAccessGuard implements CanActivate {
+export class AccessGuard implements CanActivate {
   constructor(
     private readonly reflector: Reflector,
     private readonly userToolsService: UserToolsService,
@@ -27,5 +27,5 @@ export class UserAccessGuard implements CanActivate {
   }
 }
 
-export const UserAuthGuard = (options: { protected: boolean } = { protected: false }) =>
+export const AuthGuard = (options: { protected: boolean } = { protected: false }) =>
   SetMetadata(GUARD_KEY, options);

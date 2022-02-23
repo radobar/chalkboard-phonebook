@@ -11,13 +11,15 @@ import { ErrorsInterceptor } from './common/interceptors/errors.interceptor';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalInterceptors(new ErrorsInterceptor());
-  app.use(helmet({
-    frameguard: false,
-    noSniff: false,
-    xssFilter: false,
-  }));
+  app.use(
+    helmet({
+      frameguard: false,
+      noSniff: false,
+      xssFilter: false,
+    }),
+  );
   app.useGlobalFilters(new HttpExceptionFilter());
-  app.enableCors();
+  // app.enableCors();
   const options = new DocumentBuilder()
     .setTitle('Nest-example')
     .setDescription('Nest-example - Example CRUD project')

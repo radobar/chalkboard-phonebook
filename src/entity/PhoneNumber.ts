@@ -3,7 +3,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ContactRecord } from './ContactRecord';
 
 // todo consider moving to common
-enum PhoneNumberType {
+export enum PhoneNumberType {
   Work = 'work',
   Home = 'home',
   Mobile = 'mobile',

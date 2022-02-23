@@ -5,10 +5,9 @@ import * as config from 'config';
 import { Connection } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
-import { UserAccessGuard } from './common/guards/user-auth-guard';
+import { AccessGuard } from './common/guards/main-auth-guard';
 import { HttpExceptionFilter } from './common/http-exception-filter';
-import { AuthModule } from './modules/_client/auth/auth.module';
-import { UserModule } from './modules/_client/user/user.module';
+import { ContactModule } from './modules/_client/contact/contact.module';
 import { ToolsModule } from './modules/_common/tools/tools.module';
 
 export const DEFAULT_TYPEORM_CONFIG: object = config.get('typeorm');
@@ -26,8 +25,7 @@ export const DEFAULT_TYPEORM_CONFIG: object = config.get('typeorm');
       namingStrategy: new SnakeNamingStrategy(),
     }),
     ToolsModule,
-    AuthModule,
-    UserModule,
+    ContactModule,
   ],
   providers: [
     {
@@ -36,12 +34,10 @@ export const DEFAULT_TYPEORM_CONFIG: object = config.get('typeorm');
     },
     {
       provide: APP_GUARD,
-      useClass: UserAccessGuard,
+      useClass: AccessGuard,
     },
   ],
 })
 export class AppModule {
-  constructor(
-    private readonly connection: Connection,
-  ) { }
+  constructor(private readonly connection: Connection) {}
 }
