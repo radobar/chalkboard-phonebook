@@ -15,10 +15,13 @@ export class PhoneNumber {
   @PrimaryGeneratedColumn()
   public readonly id: number;
 
+  @Column({ nullable: false })
+  public number: string;
+
   @Column({
     default: PhoneNumberType.Home,
   })
-  public type: string;
+  public type: PhoneNumberType;
 
   @ManyToOne(
     () => ContactRecord,
